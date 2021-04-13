@@ -1,3 +1,4 @@
+const urlServer = 'http://localhost';
 var map = L.map('mapid').on('load', onMapLoad).setView([41.4, 2.206], 9);
 //map.locate({setView: true, maxZoom: 17});
 
@@ -15,7 +16,7 @@ function onMapLoad() {
 
   // FASE 3.1
   // 1) Relleno el data_markers con una petición a la api
-  fetch('http://localhost/mapa/api/apiRestaurants.php')
+  fetch(urlServer + '/mapa/api/apiRestaurants.php')
     .then(function (response) {
       return response.json();
     })
